@@ -20,19 +20,22 @@ window.addEventListener("load", start, false);
 
 function start(){
     //Create an array to hold the tiles
-    for (var tile = 0; tile <= 15; tile++) {
+    for (var tile = 1; tile <= 15; ++tile) {
         gameTiles[tile] = tile;
     }
     //Sort the Tiles Randomly
     gameTiles.sort(randomSort);
 
     //Add random tile to the other tiles 1-15
-    for (tile  = 0; tile <= 15; tile++) {
-        document.images[tile].src = gameTiles[tile] + ".jpg";
+    for (tile  = 1; tile <= 15; ++tile) {
+        document.images[tile].src = "number" + gameTiles[tile] + ".jpg";
     }
     //Create an Empty Tile
     emptyTile = parseInt(Math.random() * 15);
     document.images[emptyTile].src = emptyTileImage;
+}
+function randomSort(){
+    return (Math.round(Math.random()) - 0.5);
 }
 
 function move(tile) {
@@ -62,7 +65,7 @@ function outcome(){
     for (var tile = 0; tile <= 15; tile++) {
         //Verify the image is correct
         if (document.images[tile].src != "empty.jpg") {
-            if (document.images[tile].src != '"' + tile + ".jpg") {
+            if (document.images[tile].src != ("number" + tile + ".jpg")) {
                 //did not win
                 winner = false;
             }
@@ -76,9 +79,6 @@ function outcome(){
             }
         }
     }
-}
-function randomSort(){
-    return (Math.round(Math.random()) - 0.5);
 }
 
 
