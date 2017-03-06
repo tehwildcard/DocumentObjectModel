@@ -15,7 +15,7 @@ https://developer.mozilla.org/en-US/Learn/JavaScript
 
 var gameTiles = new Array (16);
 var emptyTile;
-var emptyTileImage = "empty.jpg";
+var emptyTileImage = "../images/empty.jpg";
 window.addEventListener("load", start, false);
 
 function start(){
@@ -28,7 +28,7 @@ function start(){
 
     //Add random tile to the other tiles 1-15
     for (tile  = 1; tile <= 15; ++tile) {
-        document.images[tile].src = "number" + gameTiles[tile] + ".jpg";
+        document.images[tile].src = "../images/number" + gameTiles[tile] + ".jpg";
     }
     //Create an Empty Tile
     emptyTile = parseInt(Math.random() * 15);
@@ -64,8 +64,8 @@ function outcome(){
     //Loop the Tile Images
     for (var tile = 0; tile <= 15; tile++) {
         //Verify the image is correct
-        if (document.images[tile].src != "empty.jpg") {
-            if (document.images[tile].src != ("number" + tile + ".jpg")) {
+        if (document.images[tile].src != "../images/empty.jpg") {
+            if (document.images[tile].src != ("../images/number" + tile + ".jpg")) {
                 //did not win
                 winner = false;
             }
