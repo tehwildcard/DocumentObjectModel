@@ -27,7 +27,7 @@ function start(){
     gameTiles.sort(randomSort);
 
     //Add random tile to the other tiles 1-15
-    for (tile  = 1; tile <= 15; ++tile) {
+    for (tile  = 0; tile <= 15; ++tile) {
         document.images[tile].src = "../images/number" + gameTiles[tile] + ".jpg";
     }
     //Create an Empty Tile

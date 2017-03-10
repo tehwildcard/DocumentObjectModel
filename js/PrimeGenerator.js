@@ -38,10 +38,10 @@ function printPrime(a){
     for (var i = 2; i < a.length; i++){
         if (a[i]){
             for (var count = 0; count < a.length; count++){
-                var display = (count + ". ");
-                //document.getElementById("prime").innerHTML = (display + a + "<br>");
-            }   document.getElementById("prime").innerHTML = (display + a + "<br>");
-        }
+                var display =+ count;
+                document.getElementById("prime").innerHTML = (display + ". " + a + "<br>");
+            }
+        } //document.getElementById("prime").innerHTML = (display + a + "<br>");
     }
 }
 window.addEventListener("load", start, false);
